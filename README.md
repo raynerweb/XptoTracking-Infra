@@ -19,8 +19,11 @@ docker compose up -d
 Para instalar a solução de tracking é preciso baixar todos os projetos na branch master e descompactar todos os projetos
 
 > wget -c https://github.com/raynerweb/telemetry/archive/refs/heads/master.zip
+
 > wget -c https://github.com/raynerweb/tracking/archive/refs/heads/master.zip
+
 > wget -c https://github.com/raynerweb/vehicle-python/archive/refs/heads/master.zip
+
 > wget -c https://github.com/raynerweb/people/archive/refs/heads/master.zip
 
 #### JAVA
