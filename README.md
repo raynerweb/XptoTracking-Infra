@@ -1,5 +1,8 @@
 # XptoTracking
 
+## Postman Collection
+A postman collection, pode ser importada e visualizada no diretorio postman.
+
 ## Gerando as imagens
 
 ### Usando Linux
