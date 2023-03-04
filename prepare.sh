@@ -33,7 +33,7 @@ docker build -t tracking tracking-master/
 wget -c https://github.com/raynerweb/vehicle-python/archive/refs/heads/master.zip
 mv master.zip vehicle-python-master.zip
 unzip vehicle-python-master.zip
-docker build -t vehicle vehicle-python-master/VehiclesMS/
+docker build -t vehicle vehicle-python-master/
 
 wget -c https://github.com/raynerweb/people/archive/refs/heads/master.zip
 mv master.zip people-master.zip
