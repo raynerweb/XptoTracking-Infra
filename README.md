@@ -41,7 +41,7 @@ docker build -t telemetry
 ```
 
 
-####Python
+#### Python
 Para os projetos Python é necessario apenas rodar o docker build com as tags **people** e **vehicle**
 ```bash
 docker build -t people
