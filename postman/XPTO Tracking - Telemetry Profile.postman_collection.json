@@ -1,0 +1,207 @@
+{
+	"info": {
+		"_postman_id": "16ef3db9-ea0c-48f3-8bac-dc9c48ecfaf0",
+		"name": "XPTO Tracking - Telemetry Profile",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3087862"
+	},
+	"item": [
+		{
+			"name": "List Telemetry Profile",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/tracking/telemetryprofiles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"tracking",
+						"telemetryprofiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Telemetry Profile",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/tracking/telemetryprofiles/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"tracking",
+						"telemetryprofiles",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "e8d6cede-e3dc-47c9-a61d-429f316c35cf"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Telemetry Profile",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Profile abacate\",\r\n    \"sensors\": [\r\n        \"f8d6cede-e3dc-47c9-a61d-429f316c35cf\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/tracking/telemetryprofiles/e8d6cede-e3dc-47c9-a61d-429f316c35cf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"tracking",
+						"telemetryprofiles",
+						"e8d6cede-e3dc-47c9-a61d-429f316c35cf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Telemetry Profile",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Profile abacate3\",\r\n    \"sensors\": [\r\n        \"f8d6cede-e3dc-47c9-a61d-429f316c35cf\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/tracking/telemetryprofiles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"tracking",
+						"telemetryprofiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Telemetry Profile",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/tracking/telemetryprofiles/:telemetryID",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"tracking",
+						"telemetryprofiles",
+						":telemetryID"
+					],
+					"variable": [
+						{
+							"key": "telemetryID",
+							"value": "9ff43c74-bec8-46f8-8430-120b2e72713c"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Sensor To Telemetry Profile",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Profile abacate\",\r\n    \"sensors\": [\r\n        \"f8d6cede-e3dc-47c9-a61d-429f316c35cf\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/tracking/telemetryprofiles/e8d6cede-e3dc-47c9-a61d-429f316c35cf/sensor/88b0beb8-ff3a-4ae8-b6d9-0c0cb15ea131",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"tracking",
+						"telemetryprofiles",
+						"e8d6cede-e3dc-47c9-a61d-429f316c35cf",
+						"sensor",
+						"88b0beb8-ff3a-4ae8-b6d9-0c0cb15ea131"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove Sensor To Telemetry Profile Copy",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Profile abacate\",\r\n    \"sensors\": [\r\n        \"f8d6cede-e3dc-47c9-a61d-429f316c35cf\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/tracking/telemetryprofiles/e8d6cede-e3dc-47c9-a61d-429f316c35cf/sensor/88b0beb8-ff3a-4ae8-b6d9-0c0cb15ea131",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"tracking",
+						"telemetryprofiles",
+						"e8d6cede-e3dc-47c9-a61d-429f316c35cf",
+						"sensor",
+						"88b0beb8-ff3a-4ae8-b6d9-0c0cb15ea131"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

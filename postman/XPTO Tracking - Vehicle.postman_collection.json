@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "9d919e2b-df48-4952-aec7-984bbf4ecaff",
+		"name": "XPTO Tracking - Vehicle",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3087862"
+	},
+	"item": [
+		{
+			"name": "findAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/vehicles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"vehicles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/vehicles/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"vehicles",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"driver_id\": \"e4be25a9-efe4-406a-b0e4-b22298f2dff4\",\n    \"telemetry_profile_id\": \"e8d6cede-e3dc-47c9-a61d-429f316c35cf\",\n    \"number_plate\": \"1234\",\n    \"vin\": \"1234\",\n    \"color\": \"BLACK\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8083/vehicles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"vehicles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"driver_id\": \"e4be25a9-efe4-406a-b0e4-b22298f2dff4\",\n    \"telemetry_profile_id\": \"e8d6cede-e3dc-47c9-a61d-429f316c35cf\",\n    \"number_plate\": \"1234\",\n    \"vin\": \"1234\",\n    \"color\": \"WHITE\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8083/vehicles/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"vehicles",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

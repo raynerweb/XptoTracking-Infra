@@ -1,0 +1,106 @@
+{
+	"info": {
+		"_postman_id": "195bbfdc-36d6-4aaf-9037-385bd39e5f89",
+		"name": "XPTO Tracking - Tracking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3087862"
+	},
+	"item": [
+		{
+			"name": "Locations findAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8084/tracking-location",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"tracking-location"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Locations save",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"vehicleId\": 1,\n    \"latitude\": -15.826691,\n    \"longitude\": -47.921822\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8084/tracking-location",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"tracking-location"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sensors findAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8084/tracking-sensor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"tracking-sensor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sensors save",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"vehicleId\": 1,\n    \"sensorId\": \"f8d6cede-e3dc-47c9-a61d-429f316c35cf\",\n    \"data\": \"100 KM/h\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8084/tracking-sensor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"tracking-sensor"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
