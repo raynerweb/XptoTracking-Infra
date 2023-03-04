@@ -3,7 +3,37 @@
 ## Postman Collection
 A postman collection, pode ser importada e visualizada no diretorio postman.
 
-## Gerando as imagens
+## Portas
+É necessário ter as seguintes portas livres no sistema operacional
+> **5672** RabbitMQ
+
+> **5431** PostgreSQL
+
+> **8081** Telemetry API
+
+> **8082** People API
+
+> **8083** Vehicle API
+
+> **8084** Tracking (Data) API
+
+## Desenho da solução
+### Fluxo Principal
+A **VIATURA** sempre está enviando seus dados para monitoramento.
+Neste caso é chamado a API de tracking. 
+O recebimento e processamento é assincrono, para evitar gargalos, foi utilizado o rabbitmq para liberar a requisição o quanto antes.
+
+A Api de tracking verifica se há viaturas e ou sensores registrados e o fluxo de registro da telemetria é armazenado.
+
+Para caso de erro de negócio os logs deverão ser consultados.
+
+O **Tracking Manager** poderá cadastrar novas viaturas, novos perfis de telemetria e novos motoristas bem como novas empresas.
+
+
+![Tracking Solution](/assets/tracking_solution.jpg)
+
+
+## Gerando as imagens docker
 
 ### Usando Linux
 
