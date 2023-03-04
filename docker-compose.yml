@@ -1,0 +1,86 @@
+version: "3.5"
+networks:
+  ipl:
+    driver: bridge
+
+volumes:
+  db-data:
+
+services:
+  postgres_telemetry:
+    image: postgres:14
+    container_name: postgres_telemetry
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5431:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+      - ./docker-entrypoint-initdb.d/init-user-db.sh:/docker-entrypoint-initdb.d/init-user-db.sh
+    networks:
+      - ipl
+
+  ipl-rabbitmq:
+    image: rabbitmq:3-management
+    container_name: ipl-rabbitmq
+    restart: always
+    environment:
+      - RABBITMQ_DEFAULT_USER=user
+      - RABBITMQ_DEFAULT_PASS=password
+    ports:
+    - "5672:5672"
+    - "15672:15672"
+    networks:
+      - ipl
+
+  telemetry:
+    image: telemetry
+    container_name: telemetry
+    depends_on:
+      - ipl-rabbitmq
+      - postgres_telemetry
+    restart: always
+    ports:
+      - "8081:8080"
+    networks:
+      - ipl
+
+  people:
+    image: people
+    container_name: people
+    depends_on:
+      - ipl-rabbitmq
+      - postgres_telemetry
+    restart: always
+    ports:
+      - "8082:8080"
+    networks:
+      - ipl
+
+  vehicle:
+    image: vehicle
+    container_name: vehicle
+    depends_on:
+      - people
+      - telemetry
+    restart: always
+    ports:
+      - "8083:5000"
+    networks:
+      - ipl
+
+  tracking:
+    image: tracking
+    container_name: tracking
+    depends_on:
+      - vehicle
+    restart: always
+    ports:
+      - "8084:8080"
+    networks:
+      - ipl
+
+
+
